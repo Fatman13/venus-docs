@@ -14,3 +14,6 @@ yarn-error.log*
 # editor
 .vscode
 .idea
+
+# deploy script
+deploy.sh

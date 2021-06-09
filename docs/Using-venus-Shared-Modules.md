@@ -85,6 +85,12 @@ Ubuntu/Debian:
 sudo apt install mesa-opencl-icd ocl-icd-opencl-dev gcc git bzr jq pkg-config curl clang build-essential hwloc libhwloc-dev wget -y && sudo apt upgrade -y
 ```
 
+CentOS:
+
+```bash
+sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm; sudo yum install -y git gcc bzr jq pkgconfig clang llvm mesa-libGL-devel opencl-headers ocl-icd ocl-icd-devel hwloc-devel
+```
+
 #### Go
 
 To build venus, you need a working installation of [Go 1.16 or higher](https://golang.org/dl/).
@@ -134,6 +140,7 @@ Setup a password for your venus-wallet.
 $ ./venus-wallet setpwd
 Password:******
 Enter Password again:******
+Password set successfully
 ```
 
 Generate owner and worker addresses. (If you don't have an existing miner id)
@@ -240,6 +247,7 @@ $ ./venus-sealer init \
 # Flags sealer to not store any sealed sectors on the machine it runs on
 --no-local-storage \
 --wallet-name ?
+> sealer.log 2>&1 &
 
 # Expect output close to the following
 2021-06-07T04:15:49.170+0800    INFO    main    venus-sealer/init.go:193        Checking if repo exists
